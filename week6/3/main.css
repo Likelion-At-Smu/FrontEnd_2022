@@ -1,0 +1,45 @@
+ul.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid whitesmoke;
+}
+
+ul.list::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.tap-button{
+    display: block;
+    padding: 10px 20px 10px 20px;
+    float: left;
+    margin-right: -1px;
+    margin-left: -1px;
+    color:grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tap-content{
+    display: none;
+    padding: 10px;
+}
+
+.tap-content img{
+    width: 70%;
+}
+
+.here{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    color: balck;
+    margin-top: -2px;
+}
+
+.show{
+    display: block;
+}
