@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 노래 가사 </title>
+</head>
+<body>
+        <style>
+            .blue{
+                width:0px;
+                height: 5px;
+                background-color: rgb(92,100,254);
+
+            }
+            .lyrics{
+                width: 250px;
+                height: 150px;
+                overflow-y: scroll ;
+                background-color: rgb(192,224,255);
+            }
+        </style>
+    <div class ="blue"></div>
+    <div class="lyrics">
+        <p>
+            이런 말 하기까지가 참 어려워서
+            그대를 보낼 준비가
+            되질 않아서
+            아프고 또 아파서
+            이젠 무뎌진 걸까
+            나의 욕심인가 봐
+            서운한 말을 하는 게
+            너무 미안했어
+            그토록 바라고 또
+            바랬던 서롤 볼 수 없을까 봐
+            그랬나 봐 내가
+            헤어지고 나서야 궁금해진 말
+            우리 왜 헤어져야 해
+            혹시 내가 잘못 한 게 있다면
+            한 번 더 내게 기회를 준다면
+            내가 더 노력할게
+            네가 싫어하던 행동도
+            다신 하지 않을게
+            돌아와 나를 꼭 안아줘
+            마음이 변한 거라면
+            솔직했음 해
+            내가 좀 구차해지면
+            다 잊혀질까
+            널 다시 외면하고
+            지낼 수 있을까
+            원래 없었던 것처럼 나 정말
+            나는 헤어지기 싫어
+            네가 너무 보고파
+            네가 자꾸 생각나
+            내게 돌아와 줘
+            그때 널 붙잡지 못했던
+            나를 용서한다면
+            돌아와 나를 꼭 안아줘
+            많이 사랑하나 봐
+            비참해진 나지만
+            이렇게라도 해서 널
+            다시 만날 수 있게 되면
+            너무 밉다고 그냥 네게 안겨서
+            왜 이제서야 돌아왔냐고
+            울고불고 소리칠 텐데
+            나는 헤어지기 싫어
+            하고 싶은 말이 많은데
+            혼자 두고 가지 말라고
+            네 손을 붙잡아도
+            끝을 혼자 정해버리고
+            왜 날 두고 떠나가
+            다신 보지도 않을 사람처럼
+            아직 헤어지기 싫어
+            네가 아직 좋아서
+            찢어질 듯 아파와
+            그런 말 하지 마
+            내가 잘못 한 게 있다면
+            내가 미안하다고
+            제발 날 떠나지 말아 줘
+        </p>
+    </div>
+    <script>
+        let bar = document.querySelector('.blue');
+        let lyric = document.querySelector(".lyrics");
+
+        lyric.addEventListener("scroll",function(){
+            let scrollTop = lyric.scrollTop;
+            let scrollHeight = lyric.scrollHeight - lyric.clientHeight; //스크롤 높이에서 보여주는 부분의 높이 빼줌 
+            let per = scrollTop/scrollHeight;
+            bar.style.width = `${per*250}px`;
+        });
+    </script>
+</body>
+</html>

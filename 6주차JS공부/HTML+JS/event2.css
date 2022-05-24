@@ -1,0 +1,16 @@
+.tab-content {
+    display: none;
+    padding: 10px;
+}
+
+.here{
+    border-top: 1px solid white ;
+    border-left: 1px solid white ;
+    border-right: 1px solid white ;
+    border-bottom: 2px solid #ebfc00 ;
+    color: black;
+    margin-top: -2px;
+}
+.show{
+    display: block;
+}

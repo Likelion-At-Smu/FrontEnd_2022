@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const a = 1;
+        const b = 2;
+        const sum = a+b;
+        console.log(sum);
+
+        function add( num1, num2 ){
+            return num1+ num2 ;
+        }
+        const sum2 = add(100 , 200);
+        console.log(sum2);
+    
+        // Hello, name( 자신의 이름 )
+        //문자열 연결할 때 + 말고도 `${변수}` 로 할 수 있음 
+        function hello(name){
+            console.log(`Hello,${name}`);
+
+        }
+        hello("배정빈");
+    
+        function getGrade(score){
+            if(score === 100){
+                return 'A';
+            }else if(score >=90){
+                return 'B';
+            }
+            else if(score>=80){
+                return 'C';
+            }
+            else if(score>=70){
+                return 'D';
+            }
+            else{
+                return 'F'
+            }
+        }
+        const grade = getGrade(95);
+        console.log(grade);
+        
+        //객체 하나의 정보에 여러개 넣을 수 있게 키와 값의 형태로 
+
+        const sample = {
+            'key with space': true
+
+        };
+        const likelion = {
+            name : '멋쟁이사자처럼 ',
+            age : 10
+        };
+        console.log(likelion.name);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
