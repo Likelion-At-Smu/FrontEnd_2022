@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Do+Hyeon"
+    rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+    font-family: "Do Hyeon", sans-serif;
+}
+        .blue {
+            width: 0px;
+            height: 5px;
+            background-color: rgb(92, 100, 254);
+        
+        }
+        .lyrics {
+            width: 250px;
+            height: 1000px;
+            background-color: rgb(134, 217, 208);
+        }
+    </style>
+    <div class = "blue"></div>
+    <div class = "lyrics">
+        <p>
+            Look at you (yeah) 넌 못 감당해 날 (uh)
+            You (umm), took off hook (yah)
+            기분은 coke like brr
+            Look at my toe, 나의 ex 이름 tattoo
+            I got to drink up now, 니가 싫다 해도 좋아 (ah!)
+            Why are you cranky, boy?
+            뭘 그리 찡그려 너
+            Do you want a blond barbie doll?
+            It's not here, I'm not a doll (like this if you can)
+            미친 연이라 말해, what's the loss to me? Ya
+            사정없이 까보라고 you'll lose to me ya
+            사랑 그깟 거 따위 내 몸에 상처 하나도 어림없지
+            너의 썩은 내 나는 향수나 뿌릴 바엔
+            Yeah, I'm fu- tomboy
+            (Uh, ah, uh)
+            Yeah, I'll be the tomboy
+            (Uh, ah)
+            This is my attitude
+            Yeah, I'll be the tomboy
+            That's why
+            I don't wanna play this ping pong
+            I would rather film a TikTok
+            Your mom raised you as a prince
+            But this is queendom, right?
+            I like dancing, I love my friends
+            Sometimes we swear without cigarettes
+            I like to eh, on drinking whiskey
+            I won't change it, what the hell?
+            미친 척이라 말해, what's the loss to me? Ya
+            사정없이 씹으라고 you're lost to me ya
+            사랑 그깟 거 따위 내 눈에 눈물 한 방울 어림없지
+            너의 하찮은 말에 미소나 지을 바엔
+            Yeah, I'm fu- tomboy
+            (Uh, ah, uh)
+            Yeah, I'll be the tomboy
+            (Uh, ah)
+            This is my attitude
+            Yeah, I'll be the tomboy
+            Said you get up?
+            Uh, you get the song right
+            You'll get what I mean “Tomboy”, uh
+            La-la-la, la-la, la-la-la-la, la-la
+            La-la-la-la, la-la-la
+            (Umm, umm, you're brand new)
+            La-la-la, la-la, la-la-la-la, la-la
+            La-la-la-la, la-la-la
+            (Three, two, one)
+            It's neither man nor woman
+            Man nor woman
+            It's neither man nor woman
+            Just me, I-dle
+            It's neither man nor woman
+            Man nor woman
+            It's neither man nor woman
+            Just me loving tomboy  
+        </p>
+    </div>
+    <script>
+        let bar = document.querySelector(".blue");
+        let lyric = document.querySelector(".lyrics");
+
+        lyric.addEventListener("scroll", function() {
+            let scrollTop = lyric.scrollTop;
+            let scrollHeight = lyric.scrollHeight - lyric.clientHeight;
+            let per = scrollTop / scrollHeight;
+            bar.style.width = `${per * 250}px`;
+        });
+    </script>
+</body>
+</html>
