@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    //조건문 
+    
+    // 1. if 문 조건이 참일 때 코드 블록 실행 
+    const a = 1; 
+    if( a + 1 === 2){
+        console.log('a+1은 2입니다. ');
+    }
+    
+    // 3. else if 문 
+    // 지금이 무슨 계절인지 알려주는 코드 
+
+    let month = 5;
+    if(month >= 3 && month <=5){
+        console.log("봄");
+    }
+    else if( month >=6 && month <=8){
+        console.log("여름");
+    }
+    else if( month >=9 && month <=11){
+        console.log("가을");
+    }
+    else{
+        console.log("겨울");
+    }
+
+    //반복문 
+    // while 조건식이 참일 때 까지 반복문 실행 
+
+    let i = 1 ;
+    while( i<= 10){
+        console.log(i);
+        i++;
+    }
+    //break 실습 
+    for( let j =10; j>=1 ; j--){
+        console.log(j);
+        if( j==6) break;
+    }
+
+    //continue 실습 , 다음에 오는 코드 무시하고 바로 증감식으로 
+    for( let k=1 ;k<10;k++){
+        if(k%2==0){
+            continue;
+        }
+        console.log(k);
+    }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
