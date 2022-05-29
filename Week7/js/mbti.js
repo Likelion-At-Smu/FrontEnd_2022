@@ -90,10 +90,7 @@ function goResult(){
          qna.style.display = "none";
          result.style.display = "block";
       }, 450)
-      let qIdx = 0;
-      goNext(qIdx);
    }, 450)
-
    setResult();
 }
 
