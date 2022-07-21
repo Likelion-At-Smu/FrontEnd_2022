@@ -1,3 +1,4 @@
+
 import {
     LoadingDiv,
     LoadingImg,
@@ -49,7 +50,7 @@ function ShowPostList() {
         setTimeout(()=> {
             setPostList(initialPostList);
             setLoading(false);
-        },600);     //5초
+        },600);     
     }, []);
 
     return (
@@ -65,7 +66,7 @@ function ShowPostList() {
             <PostListDiv>
                 {loading ? (
                     <LoadingDiv>
-                        <LoadingImg src={'./loading.io'} />
+                        <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
                             </LoadingDiv>
                         ) :  isPost ? (
                         <LoadingDiv>아직 기록된 글이 없습니다.</LoadingDiv>

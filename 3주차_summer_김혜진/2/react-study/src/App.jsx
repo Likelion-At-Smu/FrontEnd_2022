@@ -30,7 +30,8 @@ function App() {
                     <Main>
                         <Slogun />
                         <Routes>
-                            <Route>  
+                            <Route> 
+                                <Route path='/' element={<ShowPostList></ShowPostList>}></Route> 
                                 <Route path="/write" element={<WritePost></WritePost>}></Route>
                                 <Route path="/post/:postID" element={<ShowPost></ShowPost>}></Route>
                             </Route>
