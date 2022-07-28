@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {
    
     LoadingDiv,
@@ -43,11 +43,12 @@ function ShowPostList({isPost, loading, addPost, postList}) {
 
     const [postList, setPostList] = useState([]);
 
-    const addPost = () => {
+    const addPost = useCallback (() => { //콜백 함수 적용하기
         setPostList((postList) => [
-            ...postList, {id:4, title:'학보,시사N 대학기자상 취재',replCount: 21},
+            ...postList, 
+            {id:4, title:'학보,시사N 대학기자상 취재',replCount: 21},
         ]);
-    };
+    }, [postList]);  //디펜던시 넣어줘야함
     const navigate = useNavigate();
     const goWrite = () => {
         navigate('/write');

@@ -15,6 +15,6 @@ function Slogun() {
         </SlogunSmall>
     </SlogunSection>
     );
-};
+}
 
-export default Slogun;
+export default React.memo(Slogun);
