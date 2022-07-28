@@ -19,8 +19,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EachPost from './EachPost';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import { useNavigate } from 'react-router-dom';
+import loadingIcon from './loading.svg';
 
 const initialPostList = [
     {id:1, title:'학보, 시사N 대학기자상 취재'},
@@ -35,11 +36,11 @@ function ShowPostList() {
 
     const [postList, setPostList] = useState([]);
 
-    const addPost = () => {
+    const addPost = useCallback(() => {
         setPostList((postList) => [
             ...postList, {id:4, title:'학보, 시사N 대학기자상 취재'},
         ]);
-    };
+    },[postList]);
 
     const navigate = useNavigate();
     const goWrite = () => {
@@ -66,7 +67,7 @@ function ShowPostList() {
             <PostListDiv>
                 {loading ? (
                     <LoadingDiv>
-                        <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
+                        <LoadingImg src={loadingIcon} />
                             </LoadingDiv>
                         ) :  isPost ? (
                         <LoadingDiv>아직 기록된 글이 없습니다.</LoadingDiv>

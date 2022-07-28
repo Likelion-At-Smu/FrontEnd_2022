@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     FooterDiv,
     FooterBig,
@@ -18,4 +19,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default React.memo(Footer);

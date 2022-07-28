@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   PostSection,
@@ -19,6 +19,7 @@ import {
   ReplInput,
   ReplSubmitDiv,
 } from './styledComponent';
+import loadingIcon from './loading.svg';
 
 const postData = {
   title: `바운스`,
@@ -38,21 +39,23 @@ const ShowPost = () => {
   const [repls, setRepls] = useState([]);
   const [postLoading, setPostLoading] = useState(true);
   const [replLoading, setReplLoading] = useState(true);
+  const replInput = useRef();
 
   //useEffect 2개 사용하기
     useEffect(() => {
         setTimeout(() => {
             setPost(postData);
             setPostLoading(false);
-        }, 1000);
-    });
+        }, 300);
+        replInput.current.focus();
+    }, []);
 
     useEffect(() => {
         setTimeout(() => {
             setRepls(replData);
             setReplLoading(false);
-        }, 3000);
-    });
+        }, 1000);
+    }, []);
 
   //input창 상태관리
   const [repl, setRepl] = useState('');
@@ -62,23 +65,16 @@ const ShowPost = () => {
     return repls.length;
   };
 
-  const onChange = (e) => {
-    setRepl(e.target.value);
-  };
-
-  //memo hook실습
-  const replCount = useMemo(() =>  countRepls(repls), [repls]);
-
-  return (
-    <div>
-      <PostSection>
-        <PostTitleDiv>
+  const PostAndRepl =React.memo(({post, postLoading, replLoading, repls, replCount})=>{
+    return(
+      <>
+      <PostTitleDiv>
           <PostTitle>{post && post.title}</PostTitle>
         </PostTitleDiv>
 
         {postLoading ? (
           <LoadingDiv>
-            <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
+            <LoadingImg src={loadingIcon} />
           </LoadingDiv>
         ) : (
           <PostReplDiv>{post && post.contents}</PostReplDiv>
@@ -89,7 +85,7 @@ const ShowPost = () => {
         <ReplTitleDiv>댓글 {replCount} </ReplTitleDiv>
         {replLoading ? (
           <LoadingDiv>
-            <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
+            <LoadingImg src={loadingIcon} />
           </LoadingDiv>
         ) : (
           repls &&
@@ -99,10 +95,31 @@ const ShowPost = () => {
               <Repl>{element.content}</Repl>
             </PostReplDiv>
           ))
-        )}
+        )} </>
+    )
+  })
+ 
+  const onChange = (e) => {
+    setRepl(e.target.value);
+  };
+
+  //memo hook실습
+  const replCount = useMemo(() =>  countRepls(repls), [repls]);
+
+  return (
+    <div>
+      <PostSection>
+        <PostAndRepl 
+          post={post}
+          postLoading={postLoading}
+          replCount={replCount}
+          replLoading={replLoading}
+          repls={repls}
+        />
 
         <WriterDiv>
-          <ReplInput onChange={onChange} value={repl}></ReplInput>
+          <ReplInput onChange={onChange} value={repl}
+            ref={replInput}></ReplInput>
           <ReplSubmitDiv>
             <span>입력</span>
           </ReplSubmitDiv>
