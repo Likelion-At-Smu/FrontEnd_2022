@@ -22,7 +22,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import loadingIcon from './loading.svg';
 import EachPost from '../../react_study/src/EachPost';
 import { element } from 'prop-types';
 
@@ -69,7 +68,7 @@ function ShowPostList() {
             <PostListDiv>
                 {loading ? (
                     <LoadingDiv>
-                        <LoadingImg src={loadingIcon}/>
+                        <LoadingImg src={`${process.env.PUBLIC_URL}/img/loading.svg`} />
                     </LoadingDiv>
                 ) : isPost ? ( 
                     <LoadingDiv>아직 기록된 글이 없습니다.</LoadingDiv>

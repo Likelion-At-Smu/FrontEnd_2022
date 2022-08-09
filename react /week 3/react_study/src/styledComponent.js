@@ -117,6 +117,7 @@ export const EachPostLi = styled.li`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
 `;
 
 export const PostLink = styled.span`
@@ -142,7 +143,7 @@ export const PagenumberDiv = styled.div`
   border: 1px solid #f39926;
   border-radius: 5px;
 `;
-export const FooterDiv = styled.div`
+export const Footerdiv = styled.div`
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -157,13 +158,9 @@ export const FooterSmall = styled.span`
   margin: 5px;
   font-size: 5px;
 `;
-export const CursorDiv = styled.div`
-  cursor: pointer;
-`;
 
-//ShowPost에 추가되는 스타일 컴포넌트
-export const PostReplDiv = styled.div`
-  border-top: 2px solid white;
+export const PostReadDiv = styled.div`
+  margin-top: 15px;
   margin-bottom: 15px;
   width: 100%;
   line-height: 24px;
@@ -173,7 +170,13 @@ export const ReplTitleDiv = styled.div`
   margin-top: 20px;
   margin-bottom: 10px;
 `;
-export const ReplWriter = styled.div`
+export const PostReplDiv = styled.div`
+  border-top: 2px solid white;
+  margin-bottom: 15px;
+  width: 100%;
+  line-height: 24px;
+`;
+export const Replwriter = styled.div`
   margin-top: 10px;
   margin-left: 10px;
   font-weight: bolder;
@@ -181,7 +184,7 @@ export const ReplWriter = styled.div`
 export const Repl = styled.span`
   font-size: 12px;
 `;
-export const WriterDiv = styled.div`
+export const WritereplDiv = styled.div`
   display: flex;
   flex-direction: row;
 `;
@@ -205,8 +208,10 @@ export const ReplSubmitDiv = styled.div`
   align-items: center;
   cursor: pointer;
 `;
+export const CursorDiv = styled.div`
+  cursor: pointer;
+`;
 
-//WritePost.jsx
 export const PostWriteDiv = styled.div`
   width: 100%;
   display: flex;
@@ -241,5 +246,5 @@ export const PostSubmit = styled.div`
   margin-bottom: 5px;
   font-family: 'Black Han Sans', sans-serif;
   font-size: 20px;
+  color: white;
 `;
-// export default MediaDiv;

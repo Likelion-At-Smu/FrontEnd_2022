@@ -12,9 +12,9 @@ import {
   PostRepl,
   PostReplDiv,
   ReplTitleDiv,
-  ReplWriter,
+  Replwriter,
   Repl,
-  WriterDiv,
+  WritereplDiv,
   ReplInput,
   ReplSubmitDiv,
 } from './styledComponent';
@@ -94,18 +94,18 @@ const ShowPost = () => {
           repls &&
           repls.map((element) => (
             <PostReplDiv key={element.id}>
-              <ReplWriter>익명</ReplWriter>
+              <Replwriter>익명</Replwriter>
               <Repl>{element.content}</Repl>
             </PostReplDiv>
           ))
         )}
 
-        <WriterDiv>
+        <WritereplDiv>
           <ReplInput onChange={onChange} value={repl}></ReplInput>
           <ReplSubmitDiv>
             <span>입력</span>
           </ReplSubmitDiv>
-        </WriterDiv>
+        </WritereplDiv>
       </PostSection>
     </div>
   );

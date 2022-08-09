@@ -1,6 +1,6 @@
 import {
-    Main,
-    MediaDiv,
+  Main,
+  MediaDiv,
 } from './styledComponent';
 
 import { darkTheme, GlobalStyles } from '../../react_study/src/styles';
@@ -16,31 +16,31 @@ import ShowPost from './ShowPost';
 import WritePost from './WritePost'; 
 
 function App() {
-    const [ darkMode, setDarkMode ] = useState(true);
-    return (
-        <>
-            <ThemeProvider theme={darkMode?darkTheme:lightTheme}>
-                <GlobalStyles />
-                <MediaDiv>
-                    <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-                    <Main>
-                        <Slogun />
-                        <Routes>
-                            <Route 
-                                path='/' 
-                                element={
-                                    <ShowPostList></ShowPostList>
-                                }
-                            ></Route>
-                            <Route path='/write' element={<WritePost></WritePost>}></Route>
-                            <Route path='/post/:postID' element={<ShowPost></ShowPost>}></Route>
-                        </Routes>
-                    </Main>
-                    <Footer />
-                </MediaDiv>
-            </ThemeProvider>
-        </>
-    );
+  const [ darkMode, setDarkMode ] = useState(true);
+  return (
+      <>
+          <ThemeProvider theme={darkMode?darkTheme:lightTheme}>
+              <GlobalStyles />
+              <MediaDiv>
+                  <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+                  <Main>
+                      <Slogun />
+                      <Routes>
+                          <Route 
+                              path='/' 
+                              element={
+                                  <ShowPostList></ShowPostList>
+                              }
+                          ></Route>
+                          <Route path='/write' element={<WritePost></WritePost>}></Route>
+                          <Route path='/post/:postID' element={<ShowPost></ShowPost>}></Route>
+                      </Routes>
+                  </Main>
+                  <Footer />
+              </MediaDiv>
+          </ThemeProvider>
+      </>
+  );
 }
 
 export default App;
